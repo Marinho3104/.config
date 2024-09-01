@@ -1,4 +1,11 @@
 
+-- Setup fold stuff
+
+vim.cmd( 'set foldcolumn=1' )
+vim.cmd( 'set foldmethod=expr' )
+vim.cmd( 'set foldlevel=99' )
+vim.cmd( 'set foldexpr=nvim_treesitter#foldexpr()' )
+
 local opt = vim.opt
 
 opt.relativenumber = true

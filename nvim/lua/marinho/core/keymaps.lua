@@ -16,3 +16,10 @@ keymap.set("n", "<leader><Left>", ":tabprevious<CR>", { desc = "Move to the left
 -- Neo tree toggle
 keymap.set("n", "<leader><ENTER>", ":Neotree toggle<CR>", { desc = "Toggles the Neo tree explorer", noremap = true, silent = true })
 
+-- Reloads current buffer ( for treesitter fold expr to reload )
+function reload_current_buffer()
+  vim.cmd('w')
+  vim.cmd('e"')
+end
+
+keymap.set("n", "rr", ":lua reload_current_buffer()<CR>")
